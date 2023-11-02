@@ -42,11 +42,7 @@ class MCQGenerator():
             print('-------------------')
             print(question.questionText)
             print("Right Answer:-"+question.answerText)
-            if(len(question.distractors) <=3):
-                print(question.distractors)
-            else:
-                print("Not enough distractors")
-
+            print(question.distractors)
             
             print('-------------------')
 

@@ -34,27 +34,32 @@ Oxygen was isolated by Michael Sendivogius before 1604, but it is commonly belie
 Common uses of oxygen include production of steel, plastics and textiles, brazing, welding and cutting of steels and other metals, rocket propellant, oxygen therapy, and life support systems in aircraft, submarines, spaceflight and diving.'''
 
 
-contextEye = '''The human eye is one of the most valuable and sensitive sense organs.
-It enables us to see the wonderful world and the colours around us. On
-closing the eyes, we can identify objects to some extent by their smell,
-taste, sound they make or by touch. It is, however, impossible to identify
-colours while closing the eyes. Thus, of all the sense organs, the human
-eye is the most significant one as it enables us to see the beautiful,
-colourful world around us.
-The human eye is like a camera. Its lens
-system forms an image on a light-sensitive
-screen called the retina. Light enters the eye
-through a thin membrane called the cornea.
-It forms the transparent bulge on the front
-surface of the eyeball as shown in Fig. 11.1.
-The eyeball is approximately spherical in shape
-with a diameter of about 2.3 cm. Most of the
-refraction for the light rays entering the eye
-occurs at the outer surface of the cornea. The
-crystalline lens merely provides the finer
-adjustment of focal length required to focus
-objects at different distances on the retina. We find a structure called iris
-behind the cornea. Iris is a dark muscular diaphragm that controls the
-size of the pupil. '''
+contextDig = '''The digestive system is a complex and highly organized system responsible for breaking down food, absorbing nutrients, and eliminating waste products from the body. It encompasses a series of organs and structures that work together to facilitate the digestion and absorption of nutrients. Here are some of the key components of the digestive system:
 
-MCQ_Generator.generate_mcq_questions(contextEye, 10) 
+Mouth: Digestion begins in the mouth, where teeth mechanically break down food into smaller pieces, and saliva, produced by the salivary glands, starts the chemical breakdown of starches through the enzyme amylase.
+
+Pharynx and Esophagus: Once food is chewed and mixed with saliva, it is swallowed and moves through the pharynx and esophagus, which serve as passageways to transport food to the stomach.
+
+Stomach: The stomach is a muscular organ that stores and partially digests food. It secretes gastric juices containing hydrochloric acid and pepsin to break down proteins. This results in a semi-liquid substance known as chyme.
+
+Small Intestine: The small intestine is where the majority of digestion and nutrient absorption occur. It is divided into three parts: the duodenum, jejunum, and ileum. Enzymes from the pancreas and bile from the liver help break down carbohydrates, fats, and proteins, while the villi and microvilli in the intestinal lining absorb nutrients into the bloodstream.
+
+Pancreas: The pancreas is both an endocrine and exocrine gland. It produces digestive enzymes (exocrine function) that are released into the small intestine to further digest food. It also secretes insulin and glucagon (endocrine function), which regulate blood sugar levels.
+
+Liver: The liver has multiple roles in digestion. It produces bile, which is stored in the gallbladder and released into the small intestine to emulsify fats, making them easier to digest. The liver also detoxifies blood and stores glycogen for energy.
+
+Gallbladder: The gallbladder stores bile produced by the liver and releases it into the small intestine in response to the presence of fatty foods. Bile aids in the digestion and absorption of fats.
+
+Large Intestine (Colon): The large intestine absorbs water and electrolytes from undigested food, forming feces. It also houses a diverse population of beneficial bacteria that assist in the breakdown of certain substances and produce vitamins.
+
+Rectum: The rectum stores feces until they are ready to be eliminated from the body.
+
+Anus: The anus is the final part of the digestive system. It has sphincters that control the release of feces during defecation.
+
+Appendix: Although its exact function is not well understood, the appendix is a small, finger-like pouch attached to the large intestine. It may play a role in immune function.
+
+The digestive system's primary function is to extract nutrients and energy from the food we consume while eliminating waste products. This intricate system relies on the coordinated action of various organs and enzymes to ensure that
+
+'''
+
+MCQ_Generator.generate_mcq_questions(contextDig, 10) 
