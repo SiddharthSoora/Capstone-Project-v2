@@ -3,8 +3,9 @@ import torch
 
 from app.mcq_generation import MCQGenerator
 
-def show_result(generated: str, answer: str, context:str, original_question: str = ''):
-    
+
+def show_result(generated: str, answer: str, context: str, original_question: str = ''):
+
     print('Context:')
 
     for wrap in textwrap.wrap(context, width=120):
