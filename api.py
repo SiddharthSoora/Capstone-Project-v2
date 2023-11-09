@@ -1,3 +1,4 @@
+#api
 import contextlib
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
@@ -16,12 +17,12 @@ MQC_Generator = MCQGenerator()
 @app.route("/")
 @cross_origin()
 def hello():
-    return json.dumps('Hello to Leaf! Soora Chutiya hai ')
+    return json.dumps('Welcome to QuizFuse API')
 
 
-@app.route("/generate", methods=["POST"])
+@app.route("/generate-mcq", methods=["POST"])
 @cross_origin()
-def generate():
+def generate_mcq():
     #postman
     # text = request.form['text']
 
@@ -34,6 +35,10 @@ def generate():
 
     return json.dumps(result)
 
+@app.route("/generate-mcq-image", methods=["POST"])
+@cross_origin()
+def generate_mcq_image():
+    pass
 
 if __name__ == '__main__':
     from werkzeug.serving import run_simple
