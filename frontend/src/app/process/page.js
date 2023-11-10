@@ -8,40 +8,45 @@ import QuestionCard from "@/components/QuestionCard";
 
 // Define your React component
 function Page() {
-
   return (
     <>
       {/* <FileUploader /> */}
-      {/* <div>
-        <div className="bg-white text-center rounded-lg p-4 w-1/4 mx-auto">
-          <h1 className="text-black font-bold text-2xl">QuizFuse.ai</h1>{" "}
-        </div>
-        <div class="flex flex-col justify-start items-start min-h-screen bg-gray-200">
-          <div class="flex flex-col w-full ml-40 mt-10">
-            <h3 className="text-black font-bold mt-20 mb-2">Text Input Here</h3>
-            <textarea
-              placeholder="Enter your text here..."
-              class="p-2 rounded-md border mt-3 w-1/3"
-            />
-            <h3 className="text-black font-bold mt-8">Upload Images Here</h3>
-            <input type="file" name="Image Upload" multiple hidden />
-            <button
-              type="button"
-              id="upload-button"
-              class="bg-black hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-md w-40 mt-4"
-            >
-              Upload Image
-            </button>
-            <div class="mt-10">
-              <button class="bg-white hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-md ml-10 mt-10">
-                Generate Questions
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <QuestionCard/>
       
+
+      <main className="bg-gray-100">
+        <div className="text-2xl font-bold px-10 py-6">QuizFuse</div>
+        <div className="grid grid-cols-2 mt-10 max-w-[74rem] mx-auto">
+          <div className="mx-4">
+            <div className="text-xl font-bold">Enter Text Here!</div>
+            <div className="items-start">
+              <textarea
+                className="w-full h-[250px] p-2 border rounded-lg text-xs"
+                placeholder="Enter your text here..."
+              ></textarea>
+              <div className="ml-4">
+                <div className="flex items-center -ml-3">
+                  <div className="text-sm font-bold justify-between">Number Of Questions</div>
+                  <label
+                    for="count"
+                    class="block mb-2 text-sm font-medium  dark:text-white"
+                  >
+                  </label>
+                  <input
+                    type="number"
+                    id="count"
+                    class=" border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-white dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Enter the number of questions you want to generate"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <FileUploader/>
+          </div>
+          <div><QuestionCard/></div>
+        </div>
+      </main>
+
       {/* <Mp /> */}
     </>
   );

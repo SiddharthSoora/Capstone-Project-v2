@@ -26,7 +26,7 @@ export default function Hero() {
               {" "}
               {/* Updated this line */}
               <div
-                className={`text-${black} lg:text-6xl sm:text-5xl text-3xl font-bold mx-2`}
+                className={`text-${black} lg:text-6xl sm:text-5xl text-3xl font-bold mx-2 text-start`}
               >
                 Generate Questions Super Fast!
               </div>

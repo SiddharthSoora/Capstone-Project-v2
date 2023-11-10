@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 body{
-    background-color: #EFF1F8;
+    /* background-color: #EFF1F8; */
+}
+
+textarea{
+    resize: none;
 }
 
