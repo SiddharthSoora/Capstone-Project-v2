@@ -1,8 +1,21 @@
 export default function Mp() {
     return(
-        <div>
-            <div className="text-5xl text-red-500">Mp page Hello</div>
-        </div>
+        <>
+        {/* <div>
+        <button onClick={handleGenerateMCQ}>Generate MCQ</button>
+        <ul>
+          // Render the generated questions 
+          {generatedQuestions.map((question, index) => (
+            <>
+              <li key={index}>Question : {question["questionText"]}</li>
+              <li key={index}> Answer : {question["answerText"]}</li>
+              <li key={index}>Options : {question["distractors"]}</li>
+            </>
+          ))}
+        </ul>
+      </div> */}
+      {/* <Mp /> */}
+      </>
         
     )
 }
