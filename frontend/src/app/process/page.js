@@ -1,5 +1,6 @@
 // Import necessary dependencies
 "use client";
+import Mp from "@/components/Mp";
 import { useState } from "react";
 
 // Define your React component
@@ -37,6 +38,7 @@ function Page() {
   };
 
   return (
+    <>
     <div>
       <button onClick={generateMCQ}>Generate MCQ</button>
       <ul>
@@ -50,6 +52,8 @@ function Page() {
         ))}
       </ul>
     </div>
+    <Mp/>
+    </>
   );
 }
 
