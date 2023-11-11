@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function QuestionCard({ generatedQuestions, pairs }) {
   return (
     <>
-      <div className="overflow-y-auto overflow-hidden max-h-screen  ">
+      <div className="overflow-y-auto overflow-hidden max-h-[38rem]  ">
         {/* <button className="bg-red-500" onClick={handleGenerateMCQ}>
           Generate MCQ
           {value.value}

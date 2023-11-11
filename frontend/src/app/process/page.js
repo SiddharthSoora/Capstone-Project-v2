@@ -9,6 +9,9 @@ import QuestionCard from "@/components/QuestionCard";
 // Define your React component
 function Page() {
   const [generatedQuestions, setGeneratedQuestions] = useState([]);
+  const [imgGenQ, setImgGenQ] = useState([]);
+  let combined = [];
+  // const [combined, setCombined] = useState([]); // [generatedQuestions, imgGenQ
 
   const [context, setContext] = useState("");
   const [counter, setCounter] = useState(10);
@@ -26,22 +29,27 @@ function Page() {
       });
 
       if (response.ok) {
-        const data = await response.json();
+        const dataimg = await response.json();
+        const parsedDataimg = dataimg.map((jsonString) =>
+          JSON.parse(jsonString)
+        );
+        setImgGenQ(parsedDataimg);
+
+        // Move this line here
+        handleGenerateMCQ(context, counter-5);
       } else {
         console.error("Failed to upload file");
       }
     } catch (error) {
       console.error("Error during file upload:", error);
     }
-    handleGenerateMCQ();
   };
 
-  const handleGenerateMCQ = async (text,count) => {
+  const handleGenerateMCQ = async (text, count) => {
     const apiUrl = "http://localhost:8000/"; // Update the URL with your API endpoint
     // const text =
     //   "The nervous system includes the brain, spinal cord, and a complex network of nerves. This system sends messages back and forth between the brain and the body. The brain is what controls all the body's functions. The spinal cord runs from the brain down through the back"; // Replace with the actual input text
     // const count = 2; // Replace with the desired count
-
     try {
       // Make a POST request to the Flask API
       const response = await fetch(apiUrl + "generate-mcq", {
@@ -66,13 +74,15 @@ function Page() {
   const pairs = { 1: "A", 2: "B", 3: "C", 4: "D", 5: "E" };
 
   const sendDataToAPI = async () => {
-    handleGenerateMCQ(context,counter);
+    handleGenerateMCQ(context, counter);
   };
 
+  console.log(context);
+  console.log(counter);
+  // console.log(file.name)
 
-  console.log(context)
-  console.log(counter)
-  console.log(file.name)
+
+  {combined = [...generatedQuestions, ...imgGenQ]}
   return (
     <>
       {/* <FileUploader /> */}
@@ -104,7 +114,9 @@ function Page() {
                   ></label>
                   <input
                     value={counter}
-                    onChange={(event) => setCounter(parseInt(event.target.value,10))}
+                    onChange={(event) =>
+                      setCounter(parseInt(event.target.value, 10))
+                    }
                     type="number"
                     id="counterc"
                     className=" border border-gray-300 pl-4 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:border-gray-600 dark:placeholder-gray-500 placeholder:text-xs  dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 mt-4"
@@ -118,7 +130,7 @@ function Page() {
                 <div className="">
                   <button
                     className="bg-black mt-4 text-white rounded-lg flex items-center justify-center py-2 w-full mb-[2.9rem]"
-                    onClick={sendDataToAPI}
+                    onClick={handleUploadData}
                   >
                     Upload Data
                   </button>
@@ -127,12 +139,16 @@ function Page() {
             </div>
           </div>
           <div>
-            <QuestionCard
+            {/* <QuestionCard
               generatedQuestions={generatedQuestions}
               pairs={pairs}
             />
+            <QuestionCard generatedQuestions={imgGenQ} pairs={pairs} /> */}
+            
+            <QuestionCard generatedQuestions={combined} pairs={pairs} />
           </div>
         </div>
+        
       </main>
 
       {/* <Mp /> */}

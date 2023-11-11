@@ -49,12 +49,6 @@ def generate_mcq():
     return json.dumps(result)
 
 
-@app.route("/generate-mcq-image", methods=["POST"])
-@cross_origin()
-def generate_mcq_image():
-    pass
-
-
 @app.route("/upload", methods=['POST'])
 def upload_file():
 
@@ -75,7 +69,7 @@ def upload_file():
             # print(image_res)
             print(local_path)
             context = image_main.img_main(local_path)
-            questions_image = MQC_Generator.generate_mcq_questions(context, 4)
+            questions_image = MQC_Generator.generate_mcq_questions(context, 5)
             result_image = list(map(lambda x: json.dumps(x.__dict__), questions_image))
             return json.dumps(result_image)
 
