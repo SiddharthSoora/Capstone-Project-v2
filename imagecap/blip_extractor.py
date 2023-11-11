@@ -20,7 +20,6 @@ def Generate_Image_Caption(img_path):
 
 
 # List of image file paths to process
-image_paths = ['eye.png', 'brain.jpeg']
 
 # Create a ThreadPoolExecutor for parallel processing
 
