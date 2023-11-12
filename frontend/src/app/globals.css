@@ -71,24 +71,25 @@ textarea{
 
   /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-    @apply border-4 border-purple-600 mx-2;
+    width: 0.5rem;
+    @apply border-4 border-purple-700 mx-2;
   }
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: transparent;
+    
     padding:2rem;
     border-radius: 0.375rem ;
+    @apply border-4 border-black bg-purple-200;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-purple-200 rounded-md border-4 border-purple-700;
+    @apply bg-purple-400 rounded-md border-4 border-purple-700;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-  
+

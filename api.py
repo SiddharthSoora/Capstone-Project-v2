@@ -1,19 +1,18 @@
 # api
 import sys
+sys.path.append("./imagecap")
+from imagecap import image_main
+from app.mcq_generation import MCQGenerator
+from app.models.question import Question
+import json
+
 import contextlib
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import cloudinary
 import cloudinary.uploader
 import os
-sys.path.append("./imagecap")
 
-
-import json
-
-from app.models.question import Question
-from app.mcq_generation import MCQGenerator
-from imagecap import image_main
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -34,11 +33,6 @@ def hello():
 @app.route("/generate-mcq", methods=["POST"])
 @cross_origin()
 def generate_mcq():
-    # postman
-    # text = request.form['text']
-
-    # Sendinf JSON ->API -> Return JSON
-
     requestJson = json.loads(request.data)
     text = requestJson['text']
     count = 10 if requestJson['count'] == '' else int(requestJson['count'])
@@ -52,8 +46,6 @@ def generate_mcq():
 @app.route("/upload", methods=['POST'])
 def upload_file():
 
-    upload_result = None
-
     if request.method == 'POST':
         file_dwn = request.files['file']
         print('Uploading file '+file_dwn.filename)
@@ -63,14 +55,11 @@ def upload_file():
             file_path = file_dwn.filename
             local_path = "./frontend/public/localstore/"+file_path
             file_dwn.save(local_path)
-            # upload_result = cloudinary.uploader.upload(file_to_upload)
-            # app.logger.info(upload_result)
-            # image_res = jsonify(upload_result)
-            # print(image_res)
             print(local_path)
             context = image_main.img_main(local_path)
             questions_image = MQC_Generator.generate_mcq_questions(context, 5)
-            result_image = list(map(lambda x: json.dumps(x.__dict__), questions_image))
+            result_image = list(
+                map(lambda x: json.dumps(x.__dict__), questions_image))
             return json.dumps(result_image)
 
 

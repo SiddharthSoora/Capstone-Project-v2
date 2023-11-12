@@ -12,8 +12,9 @@ export default function FileUploader({ file, setFile }) {
           <label
             className="h-full 
         w-full flex items-center 
-        justify-center gap-1 border
-         bg-black rounded-lg min-h-2xl
+        justify-center gap-1 border-2
+        border-black
+         bg-black hover:bg-transparent shadow-lg  hover:text-purple-600 hover:border-purple-400 transition ease-in-out duration-500 rounded-lg min-h-2xl
           p-2 text-md text-white cursor-pointer "
           >
             <input type="file" className="hidden" onChange={handleFileChange} />
@@ -37,12 +38,12 @@ export default function FileUploader({ file, setFile }) {
         <div className="h-40">
           {file && (
             <img
-              className="rounded-lg w-full h-full object-cover border border-gray-200"
+              className="rounded-lg w-full h-full object-cover border border-purple-200"
               src={URL.createObjectURL(file)}
             />
           )}
           {!file && (
-            <div className="rounded-lg w-full h-full object-cover border-2 border-gray-200" />
+            <div className="rounded-lg w-full h-full object-cover border-2 border-purple-300" />
           )}
         </div>
       </div>

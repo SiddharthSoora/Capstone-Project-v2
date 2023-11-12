@@ -8,6 +8,7 @@ export default function Home() {
       <div className={lightBlue}>
         {/* <Mainbody /> */}
         <Hero />
+      <div className="absolute bottom-1 right-6 text-sm text-gray-400 "><span className="mx-2">AI V1.2 </span> <span className="text-purple-400">Quiz</span><span className="text-pink-400">Fuse</span> V1.0.1A </div>
       </div>
     </>
   );
