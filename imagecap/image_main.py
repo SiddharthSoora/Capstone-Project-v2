@@ -6,16 +6,16 @@ from label_extractor import Extract_Labels_OCR
 
 
 def img_main(image_path):
-    print('Running....')
+    print("API Image ---> Using BLIP Model to Identify Image Context")
     blip_context = Generate_Image_Caption(image_path)
-    print('Context:', blip_context)
+    print('API Image ---> Context : ', blip_context)
 
     # EasyOCR
-    print('Generating Labels....')
+    print('API Image ---> Generating Labels....')
     labels = Extract_Labels_OCR(image_path)
-    print('Labels:', labels)
+    # print('Labels:', labels)
 
-    print('Generating Context from Image Labels....')
+    print('API Image ---> Generating Context from Image Labels....')
     context_para = ''
 
     for label in labels:
@@ -25,5 +25,5 @@ def img_main(image_path):
         except:
             pass
 
-    print(context_para)
+    # print(context_para)
     return context_para

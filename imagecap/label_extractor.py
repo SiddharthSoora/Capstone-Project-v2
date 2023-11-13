@@ -3,10 +3,14 @@ import easyocr
 from matplotlib import pyplot as plt
 import numpy as np
 import cv2
+import warnings
 
 
 #inp : Image path ,return: list of labels 
 def Extract_Labels_OCR(image_path):
+    
+    # Suppress warnings
+    warnings.filterwarnings("ignore", category=UserWarning)
     reader = easyocr.Reader(['en'])
     result = reader.readtext(image_path, paragraph="False")
     out = []
