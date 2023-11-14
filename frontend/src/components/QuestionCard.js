@@ -11,10 +11,10 @@ export default function QuestionCard({ generatedQuestions, pairs }) {
 
   return (
     <>
-      <h1 className="text-xl font-bold ml-16 mb-4">
+      <h1 className="text-xl font-bold ml-16 mb-6">
         Your Generated<span className="text-[#EC669F]"> Questions!</span> 
       </h1>
-      <div className="overflow-y-auto overflow-hidden max-h-screen h-[34rem]">
+      <div className="overflow-y-auto overflow-hidden max-h-screen h-[35rem]">
         {generatedQuestions.map((question, index) => {
           const options = [...question["distractors"], question["answerText"]];
           const shuffledOptions = shuffleArray(options);

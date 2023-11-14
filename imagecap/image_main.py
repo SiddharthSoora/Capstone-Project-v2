@@ -13,14 +13,18 @@ def img_main(image_path):
     # EasyOCR
     print('API Image ---> Generating Labels....')
     labels = Extract_Labels_OCR(image_path)
-    # print('Labels:', labels)
+    print(' API Images ---> Labels:', labels)
 
     print('API Image ---> Generating Context from Image Labels....')
     context_para = ''
+    blacklist = ['medina', 'multan', 'lahore', 'karachi', 'pakistan', 'islamabad', 'peshawar', 'quetta', 'sindh' , 'palastine']
 
     for label in labels:
         try:
             context = wikipedia.summary(label, sentences=2)
+            for word in blacklist:
+                if word in context.lower():
+                    context = ''
             context_para += label + " : " + context + " "+"\n"
         except:
             pass

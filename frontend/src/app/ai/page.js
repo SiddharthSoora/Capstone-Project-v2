@@ -10,7 +10,7 @@ function Page() {
   const [generatedQuestions, setGeneratedQuestions] = useState([]);
   const [imgGenQ, setImgGenQ] = useState([]);
   const [context, setContext] = useState("");
-  const [counter, setCounter] = useState(10);
+  const [counter, setCounter] = useState("");
   const [loading, setLoading] = useState(false);
   const [isGenerated, setIsGenerated] = useState(false);
   const [file, setFile] = useState(null);
@@ -70,6 +70,22 @@ function Page() {
     setIsGenerated(true);
   };
 
+  const testQuestions1 = async () => {
+    setContext("The human eye is one of the most valuable and sensitive sense organs. It enables us to see the wonderful world and the colours around us. On closing the eyes, we can identify objects to some extent by their smell, taste, sound they make or by touch. It is, however, impossible to identify colours while closing the eyes. Thus, of all the sense organs, the human eye is the most significant one as it enables us to see the beautiful, colourful world around us.The human eye is like a camera. Its lens system forms an image on a light-sensitive screen called the retina. Light enters the eye through a thin membrane called the cornea. It forms the transparent bulge on the front surface of the eyeball as shown in Fig. 11.1. The eyeball is approximately spherical in shape with a diameter of about 2.3 cm. Most of the refraction for the light rays entering the eye occurs at the outer surface of the cornea. The crystalline lens merely provides the finer adjustment of focal length required to focus objects at different distances on the retina. We find a structure called iris behind the cornea. Iris is a dark muscular diaphragm that controls the size of the pupil. The pupil regulates and controls the amount of light entering the eye. The eye lens forms an inverted real image of the object on the retina. The retina is a delicate membrane having enormous number of light-sensitive cells. The light-sensitive cells get activated upon illumination and generate electrical signals. These signals are sent to the brain via the optic nerves. The brain interprets these signals,and finally, processes the information so that we perceive objects as they are.")
+    setCounter(10)
+  }
+
+  const testQuestions2 = async () => {
+    setContext("") // Enter defualt Context
+    setCounter(12)
+  }
+
+  const testQuestions3 = async () => {
+    setContext("") // Enter defualt Context
+    setCounter(15)
+  }
+
+
   const combined = [...generatedQuestions, ...imgGenQ];
 
   return (
@@ -85,7 +101,7 @@ function Page() {
         </div>
         <div className="grid grid-cols-2  max-w-[74rem] mx-auto relative">
           <div className="mx-4">
-            <div className="text-xl font-bold ">Enter  <span className="text-[#EC669F]">Text</span> Here!</div>
+            <div className="text-xl font-bold ">Enter  <button onClick={testQuestions1} className="text-[#EC669F] cursor-default">Text</button> Here!</div>
             <div className="text-xs mb-4 text-gray-400">
               {"Enter the text from which you want to generate questions."}
             </div>
@@ -99,7 +115,7 @@ function Page() {
               <div className="ml-4">
                 <div className="flex items-center -ml-3">
                   <div className="text-sm font-bold justify-between mt-5">
-                    Number of Questions
+                    Number Of <button onClick={testQuestions2} className="text-[#EC669F] cursor-default">Questions</button>
                   </div>
                   <label
                     htmlFor="counterc"
@@ -203,7 +219,7 @@ function Page() {
               <QuestionCard generatedQuestions={combined} pairs={pairs} />
             )}
             {!isGenerated && !loading && (
-              <div className="overflow-y-auto ">
+              <div className="overflow-y-auto mt-14 "> 
                 <div className="bg-gray-50 shadow-lg rounded-xl w-3/4 h-[26%] mx-auto p-8 mb-4 border border-text-300 shadow-purple-200 ">
                   <div className="text-sm justify-center bg-purple-200 shadow-md shadow-purple-300 text-black w-full h-10 rounded-lg p-2 mb-6 items-center flex font-bold ">
                     Welcome to QuizFuse AI
