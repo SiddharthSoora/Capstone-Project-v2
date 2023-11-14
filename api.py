@@ -1,4 +1,6 @@
 # api
+import sys
+sys.path.append("./imagecap")
 import warnings
 from imagecap import image_main
 from app.mcq_generation import MCQGenerator
@@ -8,8 +10,6 @@ import contextlib
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import os
-import sys
-sys.path.append("./imagecap")
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
