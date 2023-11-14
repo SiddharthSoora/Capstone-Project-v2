@@ -43,7 +43,7 @@ export default function FileUploader({ file, setFile }) {
             />
           )}
           {!file && (
-            <div className="rounded-lg w-full h-full object-cover border-2 border-purple-300" />
+            <div className=" flex items-center justify-center rounded-lg w-full h-full object-cover border-2 border-purple-300 text-gray-400" >Upload a Image!</div>
           )}
         </div>
       </div>
